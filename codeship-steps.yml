@@ -1,5 +1,5 @@
 - type: serial
   tag: master
   steps:
-    - service: apps
-      command: /apps/release.sh
+    - service: app
+      command: /app/release.sh
