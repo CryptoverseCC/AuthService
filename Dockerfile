@@ -1,18 +1,13 @@
-FROM node:7.8.0
+FROM node
 
-ENV NPM_CONFIG_LOGLEVEL warn
+RUN git config --global user.email "servant@userfeeds.io"
+RUN git config --global user.name "Userfeeds Servant"
 
 # Copy all local files into the image.
 COPY app /app
 
 WORKDIR /app
 
-RUN npm install
-RUN npm run build --production
-
-RUN npm install -g serve
-
-CMD serve -s build
-
-# Tell Docker about the port we'll run on.
-EXPOSE 5000
+RUN npm install yarn
+RUN yarn install
+RUN yarn build

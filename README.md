@@ -1,2 +1,0 @@
-# AuthService
-Authentication Service
