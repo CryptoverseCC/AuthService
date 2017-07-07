@@ -2,14 +2,12 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const IS_DEV = process.env.NODE_ENV !== 'production';
-
 module.exports = {
   devtool: 'inline-source-map',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
-    publicPath: IS_DEV ? '' : '/apps/auth/',
+    publicPath: '',
     filename: 'bundle.js',
   },
   module: {
